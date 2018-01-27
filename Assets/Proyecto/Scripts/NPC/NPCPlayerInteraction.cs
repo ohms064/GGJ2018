@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(NPCMovement))]
+[RequireComponent(typeof(Movement))]
 public class NPCPlayerInteraction : MonoBehaviour {
     [Range(1f, 50f)]
     public float sanity, conversion;
