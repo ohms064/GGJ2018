@@ -1,42 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerMovement : MonoBehaviour {
-    private Rigidbody rb;
-    private float speed = 1f;
+public class PlayerMovement : NPCMovement {
     public float runningSpeed = 2f, walkingSpeed = 1f;
     [Range(0.5f, 10f)]
     public float shoutRadius = 1f;
-    private bool isShouting = false;
+    [DisableInPlayMode, DisableInEditorMode]
+    public PlayerTeam team;
 
-    private void Awake () {
-        rb = GetComponent<Rigidbody>();
-    }
-
-    public void Move(Vector3 delta) {
-        if ( isShouting ) {
-            Debug.Log( "Shouting, can't move" );
-            return;
-        }
-        Vector3 targetPosition = delta * Time.deltaTime * speed;
-        targetPosition += rb.position;
-        rb.MovePosition( targetPosition );
-    }
-
-    public void Shout() {
+    public override void Shout() {
         Debug.Log( "Shout! Shout! Let it all out" );
         isShouting = true;
+        var affected = Physics.OverlapSphere( transform.position, shoutRadius );
+        for ( int i = 0; i < affected.Length; i++ ) {
+            //affected[i].GetComponent<NPCPlayerInteraction>().StartConversion( team );
+        }
     }
 
-    private void FixedUpdate () {
-        
+    /// <summary>
+    /// Called from a FixedUpdate
+    /// </summary>
+    /// <param name="deltaIntensity"></param>
+    private void Shouting (float deltaIntensity) {
+        var affected = Physics.OverlapSphere( transform.position, shoutRadius * ( 1 + deltaIntensity ) );
+        for(int i = 0; i < affected.Length; i++ ) {
+            //affected[i].GetComponent<NPCPlayerInteraction>().Converting( team, deltaIntensity );
+        }
     }
 
     public void StopShout () {
         Debug.Log( "So come on!" );
         isShouting = false;
+        var affected = Physics.OverlapSphere( transform.position, shoutRadius );
+        for ( int i = 0; i < affected.Length; i++ ) {
+            //affected[i].GetComponent<NPCPlayerInteraction>().EndConversion();
+        }
     }
 
     public void StartRun () {
@@ -46,4 +47,8 @@ public class PlayerMovement : MonoBehaviour {
     public void EndRun () {
         speed = walkingSpeed;
     }
+}
+
+public enum PlayerTeam {
+        RED, GREEN, BLUE, YELLOW
 }

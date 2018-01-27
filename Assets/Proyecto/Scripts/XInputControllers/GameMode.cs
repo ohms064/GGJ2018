@@ -24,5 +24,6 @@ public class PlayerData {
     public PlayerInput prefab;
     public Vector3 startPosition;
     public PlayerIndex index;
+    public PlayerTeam team;
 }
 
