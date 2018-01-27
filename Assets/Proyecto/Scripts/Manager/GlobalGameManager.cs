@@ -26,6 +26,7 @@ public class GlobalGameManager : MonoBehaviour {
             var currentPlayer = Current.players[i];
             var inputManager = Instantiate( currentPlayer.prefab, currentPlayer.startPosition, Quaternion.identity );
             inputManager.playerIndex = currentPlayer.index;
+            inputManager.GetComponent<PlayerMovement>().team = currentPlayer.team;
         }
 
 	}

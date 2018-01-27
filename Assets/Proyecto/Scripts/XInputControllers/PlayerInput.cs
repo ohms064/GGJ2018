@@ -38,8 +38,9 @@ public class PlayerInput : MonoBehaviour {
                 movement.StopShout();
             }
             else if( state.Buttons.X == ButtonState.Pressed && previousState.Buttons.X == ButtonState.Released ) {
-                vibrationIntensity = Mathf.InverseLerp( 0f, maxButtonTime, tapTime );
+                vibrationIntensity = Mathf.InverseLerp( maxButtonTime, 0f, tapTime );
                 tapTime = 0f;
+                movement.Shouting( vibrationIntensity );
             }
         }
         else {
@@ -67,7 +68,6 @@ public class PlayerInput : MonoBehaviour {
     private void FixedUpdate () {
         if ( tapping ) {
             var vibration = vibrationIntensity * vibrationMultiplier;
-            Debug.LogFormat( "Vibration intensity: {0}", vibration );
             GamePad.SetVibration( playerIndex, vibration, vibration );
         }
         else {
