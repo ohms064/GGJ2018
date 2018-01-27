@@ -1,26 +1,17 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
 
-public class NPCMovement : MonoBehaviour {
-    public float speed;
-    protected Rigidbody rb;
-    protected bool isShouting = false;
+public class NPCMovement : Movement {
 
-    protected virtual void Awake () {
-        rb = GetComponent<Rigidbody>();
+    private NavMeshAgent navMeshAgent;
+
+    void Awake() {
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
-    public virtual void Move (Vector3 delta) {
-        if ( isShouting ) {
-            Debug.Log( "Shouting, can't move" );
-            return;
-        }
-        Vector3 targetPosition = delta * Time.deltaTime * speed;
-        targetPosition += rb.position;
-        rb.MovePosition( targetPosition );
-    }
-
-    public virtual void Shout () {
-        isShouting = true;
+    void FixedUpdate() {
+        navMeshAgent.Move(Vector3.forward);
     }
 }

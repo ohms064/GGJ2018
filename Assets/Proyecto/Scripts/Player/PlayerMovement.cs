@@ -4,7 +4,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerMovement : NPCMovement {
+public class PlayerMovement : Movement {
     public float runningSpeed = 2f, walkingSpeed = 1f;
     [Range(0.5f, 10f), DisableInPlayMode]
     public float shoutRadius = 1f;
