@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public void Move(Vector3 delta) {
         if ( isShouting ) {
+            Debug.Log( "Shouting, can't move" );
             return;
         }
         Vector3 targetPosition = delta * Time.deltaTime * speed;
@@ -29,8 +30,8 @@ public class PlayerMovement : MonoBehaviour {
         isShouting = true;
     }
 
-    private void Shouting () {
-
+    private void FixedUpdate () {
+        
     }
 
     public void StopShout () {

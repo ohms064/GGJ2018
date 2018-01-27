@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: Hierarchy (MAYA)
   m_EditorClassIdentifier: 
   last_scenesV2:
-  - guid: ebabcc8064153d14c86bfd26ca8090bb
-    pin: 0
   - guid: fbe28635be7a8014f8cb0be77f33b58a
+    pin: 0
+  - guid: ebabcc8064153d14c86bfd26ca8090bb
     pin: 0
   - guid: cccde4c5ffb739943ba6857307a20901
     pin: 0
