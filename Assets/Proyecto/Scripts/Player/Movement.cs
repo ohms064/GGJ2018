@@ -13,7 +13,6 @@ public class Movement : MonoBehaviour {
 
     public virtual void Move (Vector3 delta) {
         if ( isShouting ) {
-            Debug.Log( "Shouting, can't move" );
             return;
         }
         Vector3 targetPosition = delta * Time.deltaTime * speed;

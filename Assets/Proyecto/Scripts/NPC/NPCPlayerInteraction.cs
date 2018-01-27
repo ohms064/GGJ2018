@@ -25,11 +25,14 @@ public class NPCPlayerInteraction : MonoBehaviour {
     }
 
     public void Converting(PlayerTeam team, float delta) {
+        if ( convertingPlayer == PlayerTeam.NONE ) {
+            StartConversion( team );
+        }
         if ( !converting || team != convertingPlayer ) {
             return;
         }
         currentConversion += delta * conversionRate;
-        Debug.LogFormat( "Converting: {2} {0} {1}", delta, team, currentConversion );
+        Debug.LogFormat( "Converting: {2} {0} {1}", delta, convertingPlayer, currentConversion );
         if(currentConversion >= conversion ) {
             Convert( team );
         }

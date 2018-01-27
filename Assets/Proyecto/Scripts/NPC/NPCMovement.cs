@@ -7,7 +7,7 @@ public class NPCMovement : Movement {
 
     private NavMeshAgent navMeshAgent;
 
-    void Awake() {
+    protected override void Awake() {
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
