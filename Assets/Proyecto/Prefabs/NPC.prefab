@@ -142,6 +142,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
+  anim: {fileID: 0}
 --- !u!114 &114982307970777108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,6 +159,7 @@ MonoBehaviour:
   conversionRate: 1.24
   sanityRate: 0.1
   attackinMixer: {fileID: 24100000, guid: bd338826c4204dc4e9c466d4548035d7, type: 2}
+  explodeTime: 3
 --- !u!136 &136553319089993250
 CapsuleCollider:
   m_ObjectHideFlags: 1

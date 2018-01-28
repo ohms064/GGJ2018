@@ -8,8 +8,14 @@ public class NPCMovement : Movement {
     public LayerMask playerLayer;
     private NavMeshAgent navMeshAgent;
     private Vector3 direction;
+    public  NPCAnimator anim;
     //private 
-    
+
+#if UNITY_EDITOR
+    private void Reset () {
+        anim = GetComponent<NPCAnimator>();
+    }
+#endif
 
     protected override void Awake() {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -27,8 +33,17 @@ public class NPCMovement : Movement {
             CancelInvoke();
         } else {
             navMeshAgent.Move(direction * Time.deltaTime * speed);
+            var scale = transform.localScale;
+            if ( direction.x > 0 && scale.x < 0 ) {
+                scale.x *= -1f;
+                transform.localScale = scale;
+            }
+            else if ( direction.x < 0 && scale.x > 0 ) {
+                scale.x *= -1f;
+                transform.localScale = scale;
+            }
         }
-        
+        anim.SetWalk( navMeshAgent.speed );
     }
 
     void CheckSurroundings() {

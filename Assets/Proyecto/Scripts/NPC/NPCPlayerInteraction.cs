@@ -15,10 +15,13 @@ public class NPCPlayerInteraction : MonoBehaviour {
     public float conversionRate, sanityRate;
     //public AudioMixer attackinMixer;
     //public GlobalGameManager ggm;
+    //public AudioMixer attackinMixer;
+    private NPCAnimator anim;
+    public float explodeTime = 3f;
     
     private void Awake () {
         movement = GetComponent<NPCMovement>();
-        //ggm =  GetComponent<GlobalGameManager>();
+        anim = GetComponent<NPCAnimator>();
     }
 
     public void Update() {
@@ -66,10 +69,10 @@ public class NPCPlayerInteraction : MonoBehaviour {
         currentPlayer = team;
         currentConversion = 0f;
         EndConversion();
-        movement.Shout();
+        this.movement.Shout();
         currentSanity += sanityRate;
         if(currentSanity > sanity ) {
-
+            Explode();
         }
     }
 
@@ -79,6 +82,12 @@ public class NPCPlayerInteraction : MonoBehaviour {
     }
 
     private void Explode () {
+        StartCoroutine( Exploding() );
+    }
+
+    private IEnumerator Exploding () {
+        anim.Explode();
+        yield return new WaitForSeconds( explodeTime );
         GetComponent<NPCPoolObject>().Despawn();
     }
 
