@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114757794434717738}
   - component: {fileID: 114474538587682798}
   m_Layer: 8
-  m_Name: Capsule.prefab.REMOTE.9344
+  m_Name: Capsule
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

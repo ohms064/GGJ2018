@@ -21,7 +21,13 @@ public class NPCMovement : Movement {
     }
 
     void FixedUpdate() {
-        navMeshAgent.Move(direction * Time.deltaTime * speed);
+        if (isShouting) {
+            //Dont move
+            CancelInvoke();
+        } else {
+            navMeshAgent.Move(direction * Time.deltaTime * speed);
+        }
+        
     }
 
     void CheckSurroundings() {
