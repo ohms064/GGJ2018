@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Name: 4Player
   m_EditorClassIdentifier: 
   players:
-  - prefab: {fileID: 114757794434717738, guid: 2705a204a958b114aa9f1c9003cef695, type: 2}
+  - prefab: {fileID: 114199066995436950, guid: f112acfbb8547594285f108f24f630a9, type: 2}
     startPosition: {x: 11.49777, y: -4.3891, z: 1.730353}
     index: 0
     team: 0
-  - prefab: {fileID: 114757794434717738, guid: 2705a204a958b114aa9f1c9003cef695, type: 2}
+  - prefab: {fileID: 114952109228477654, guid: 96fdd068f2a1f8a4db24f70919ed0bf4, type: 2}
     startPosition: {x: -12.23223, y: -4.3891, z: 1.730353}
     index: 1
     team: 1
-  - prefab: {fileID: 114757794434717738, guid: 2705a204a958b114aa9f1c9003cef695, type: 2}
+  - prefab: {fileID: 114679869737711064, guid: 44591d20b3fc0264b91f74de69a7ec2f, type: 2}
     startPosition: {x: -12.23223, y: -4.3891, z: 21.85035}
     index: 2
     team: 2
-  - prefab: {fileID: 114757794434717738, guid: 2705a204a958b114aa9f1c9003cef695, type: 2}
+  - prefab: {fileID: 114843053060499246, guid: 3f22703045d86e34198f5fedd2b18352, type: 2}
     startPosition: {x: 11.49777, y: -4.3891, z: 21.85035}
     index: 3
     team: 3

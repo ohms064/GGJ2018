@@ -4,6 +4,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof( PlayerAnimator ) )]
 public class PlayerMovement : Movement {
     public float runningSpeed = 2f, walkingSpeed = 1f;
     [Range(0.5f, 10f), DisableInPlayMode]
@@ -15,6 +16,29 @@ public class PlayerMovement : Movement {
     public event System.Action<int> AddToScore;
     [Range(50, 500, order = 10)]
     public int scorePerShout;
+    private PlayerAnimator animator;
+    public float accelerationTime = 1f;
+    private float inverseMaxSpeed;
+
+    protected override void Awake () {
+        base.Awake();
+        animator = GetComponent<PlayerAnimator>();
+        inverseMaxSpeed = 1 / runningSpeed;
+    }
+
+    public override void Move (Vector3 delta) {
+        base.Move( delta );
+        animator.Move( speed * inverseMaxSpeed * delta.normalized.magnitude );
+        var scale = transform.localScale;
+        if (delta.x > 0 && scale.x < 0) {
+            scale.x *= -1f;
+            transform.localScale = scale;
+        }
+        else if ( delta.x < 0 && scale.x > 0 ) {
+            scale.x *= -1f;
+            transform.localScale = scale;
+        }
+    }
 
     private void Start () {
         speed = walkingSpeed;
@@ -25,6 +49,7 @@ public class PlayerMovement : Movement {
     public override void Shout() {
         Debug.Log( "Shout! Shout! Let it all out" );
         isShouting = true;
+        animator.ShoutStart();
         var affected = Physics.OverlapSphere( transform.position, shoutRadius, layerMask );
         for ( int i = 0; i < affected.Length; i++ ) {
             affected[i].GetComponent<NPCPlayerInteraction>().StartConversion( team );
@@ -54,14 +79,25 @@ public class PlayerMovement : Movement {
         for ( int i = 0; i < affected.Length; i++ ) {
             affected[i].GetComponent<NPCPlayerInteraction>().EndConversion();
         }
+        animator.ShoutEnd();
     }
 
     public void StartRun () {
-        speed = runningSpeed;
+        StartCoroutine( LerpSpeed( walkingSpeed, runningSpeed ) );
     }
 
     public void EndRun () {
-        speed = walkingSpeed;
+        StartCoroutine( LerpSpeed( runningSpeed, walkingSpeed ) );
+    }
+
+    private IEnumerator LerpSpeed(float a, float b) {
+        float t = 0f;
+        float inverseAccelerationTime = 1 / accelerationTime;
+        while ( t < accelerationTime ) {
+            yield return new WaitForEndOfFrame();
+            t += Time.deltaTime;
+            speed = Mathf.Lerp( a, b, t * inverseAccelerationTime );
+        }
     }
 
 #if UNITY_EDITOR
