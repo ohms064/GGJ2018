@@ -12,6 +12,9 @@ public class PlayerMovement : Movement {
     [DisableInPlayMode, DisableInEditorMode]
     public PlayerTeam team = PlayerTeam.NONE;
     public int layerMask;
+    public event System.Action<int> AddToScore;
+    [Range(50, 500, order = 10)]
+    public int scorePerShout;
 
     private void Start () {
         speed = walkingSpeed;
@@ -38,6 +41,9 @@ public class PlayerMovement : Movement {
             var distance = ( transform.position - affected[i].transform.position ).sqrMagnitude;
             var lerpDistance = Mathf.InverseLerp( squareShoutRadius, 0f, distance );
             affected[i].GetComponent<NPCPlayerInteraction>().Converting( team, lerpDistance );
+            if(AddToScore != null ) {
+                AddToScore( (int) (scorePerShout * deltaIntensity) );
+            }
         }
     }
 

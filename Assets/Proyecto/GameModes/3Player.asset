@@ -24,3 +24,4 @@ MonoBehaviour:
     startPosition: {x: -15, y: 1, z: -15}
     index: 2
     team: 2
+  teamsCount: 2

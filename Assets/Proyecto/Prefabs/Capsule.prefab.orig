@@ -115,10 +115,13 @@ MonoBehaviour:
   speed: 0
   runningSpeed: 2
   walkingSpeed: 1
+<<<<<<< HEAD
   shoutRadius: 2.17
+=======
+  shoutRadius: 1
+>>>>>>> 742875be3c61fb71add6da205ac54d1b936df0e6
   team: 0
   layerMask: 0
-  scorePerShout: 100
 --- !u!114 &114757794434717738
 MonoBehaviour:
   m_ObjectHideFlags: 1

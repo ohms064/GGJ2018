@@ -17,6 +17,7 @@ public class GameMode : ScriptableObject {
             return players.Length;
         }
     }
+    public PlayerIndex teamsCount;
 }
 [System.Serializable]
 public class PlayerData {
