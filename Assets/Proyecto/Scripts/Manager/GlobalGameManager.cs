@@ -40,7 +40,7 @@ public class GlobalGameManager : MonoBehaviour {
         for ( int i = 0; i < Current.PlayerCount; i++ ) {
             var currentPlayer = Current.players[i];
             var inputManager = Instantiate( currentPlayer.prefab, currentPlayer.startPosition, Quaternion.identity );
-            camCenter.AddPlayer( i, inputManager.transform );
+            camCenter.AddPlayer( i, inputManager.GetComponent<PlayerLookAt>() );
             inputManager.playerIndex = currentPlayer.index;
             var movement = inputManager.GetComponent<PlayerMovement>();
             movement.team = currentPlayer.team;

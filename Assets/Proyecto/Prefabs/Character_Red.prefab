@@ -278,6 +278,7 @@ GameObject:
   - component: {fileID: 114102724349171584}
   - component: {fileID: 82232895187243044}
   - component: {fileID: 82013992686021364}
+  - component: {fileID: 114939674603247660}
   m_Layer: 8
   m_Name: Character_Red
   m_TagString: Player
@@ -1110,7 +1111,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1191,7 +1192,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1355,6 +1356,18 @@ MonoBehaviour:
   Sprites:
   - {fileID: 21300000, guid: 6766476ea38da434b910fbe4d30b7a9a, type: 3}
   - {fileID: 21300000, guid: 01e45a8b3a1f9c149940d9917ebb6ddb, type: 3}
+--- !u!114 &114939674603247660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1368482063129862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfd39f9100bab7469e91dfd7445acfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookAt: {fileID: 4376785896116120}
 --- !u!136 &136782201392388078
 CapsuleCollider:
   m_ObjectHideFlags: 1
