@@ -15,7 +15,7 @@ public class PlayerMovement : Movement {
     public int layerMask;
     public event System.Action<int> AddToScore;
     [Range(50, 500, order = 10)]
-    public int scorePerShout;
+    public int convertPoints;
     private PlayerAnimator animator;
     public float accelerationTime = 1f;
     private float inverseMaxSpeed;
@@ -65,10 +65,13 @@ public class PlayerMovement : Movement {
         for(int i = 0; i < affected.Length; i++ ) {
             var distance = ( transform.position - affected[i].transform.position ).sqrMagnitude;
             var lerpDistance = Mathf.InverseLerp( squareShoutRadius, 0f, distance );
-            affected[i].GetComponent<NPCPlayerInteraction>().Converting( team, lerpDistance );
-            if(AddToScore != null ) {
-                AddToScore( (int) (scorePerShout * deltaIntensity) );
-            }
+            affected[i].GetComponent<NPCPlayerInteraction>().Converting( this, lerpDistance );
+        }
+    }
+
+    public void AddScore () {
+        if ( AddToScore != null ) {
+            AddToScore( (int) ( convertPoints ) );
         }
     }
 

@@ -43,7 +43,8 @@ public class NPCPlayerInteraction : MonoBehaviour {
         }
     }
 
-    public void Converting(PlayerTeam team, float delta) {
+    public void Converting(PlayerMovement movement, float delta) {
+        var team = movement.team;
         if ( convertingPlayer == PlayerTeam.NONE ) {
             StartConversion( team );
         }
@@ -53,11 +54,13 @@ public class NPCPlayerInteraction : MonoBehaviour {
         currentConversion += delta * conversionRate;
         Debug.LogFormat( "Converting: {2} {0} {1}", delta, convertingPlayer, currentConversion );
         if(currentConversion >= conversion ) {
-            Convert( team );
+            Convert( movement );
         }
     }
 
-    public void Convert(PlayerTeam team) {
+    public void Convert(PlayerMovement movement) {
+        var team = movement.team;
+        movement.AddScore();
         Debug.LogFormat( "Converted {0}", team );
         currentPlayer = team;
         currentConversion = 0f;
