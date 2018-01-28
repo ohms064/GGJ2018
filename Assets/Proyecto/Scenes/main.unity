@@ -14001,6 +14001,49 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 434895006}
   m_Mesh: {fileID: 4300092, guid: 22b9c218cd5a61946ba33a510bb74042, type: 3}
+--- !u!1 &435285705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 435285707}
+  - component: {fileID: 435285706}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &435285706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 435285705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc94c6090739f343b757a05153a3588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnType: 1
+  burstIntervalTime: 0.48
+  burstCount: 5
+--- !u!4 &435285707
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 435285705}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -4.64, z: 34.19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1302488982}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &436331959
 GameObject:
   m_ObjectHideFlags: 0
@@ -23541,6 +23584,49 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 650242669}
   m_Mesh: {fileID: 4300062, guid: 22b9c218cd5a61946ba33a510bb74042, type: 3}
+--- !u!1 &652943198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 652943200}
+  - component: {fileID: 652943199}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &652943199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 652943198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc94c6090739f343b757a05153a3588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnType: 1
+  burstIntervalTime: 0.48
+  burstCount: 5
+--- !u!4 &652943200
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 652943198}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.77, y: -4.64, z: -10.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1302488982}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &653785053
 GameObject:
   m_ObjectHideFlags: 0
@@ -48715,6 +48801,68 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.014966221, y: 0.012620437, z: 0.014618906}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1302488979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1302488982}
+  - component: {fileID: 1302488981}
+  - component: {fileID: 1302488980}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1302488980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1302488979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1cda88ad8987ca4299ea2dd6ccb62b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPositions:
+  - {fileID: 652943199}
+  - {fileID: 435285706}
+  pool: {fileID: 1302488981}
+  randomSpawnTime: {x: 17.714285, y: 29.285715}
+--- !u!114 &1302488981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1302488979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6998d3b26c143a9489635e0b9852f636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolObjects:
+  - {fileID: 114029885714849954, guid: ee4caa4ad0b6ec445ab8a8af34d0e6a6, type: 2}
+  poolSize: 1
+--- !u!4 &1302488982
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1302488979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 652943200}
+  - {fileID: 435285707}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1304660786
 GameObject:
   m_ObjectHideFlags: 0
@@ -60641,14 +60789,27 @@ MonoBehaviour:
   Hash2: []
   Hash3:
   - list:
-    - {fileID: 0}
-    ActiveGameObject: {fileID: 0}
+    - {fileID: 435285705}
+    - {fileID: 652943198}
+    ActiveGameObject: {fileID: 435285705}
+  - list:
+    - {fileID: 1302488979}
+    ActiveGameObject: {fileID: 1302488979}
   - list:
     - {fileID: 738504058}
     ActiveGameObject: {fileID: 738504058}
   - list:
     - {fileID: 967306660}
     ActiveGameObject: {fileID: 967306660}
+  - list:
+    - {fileID: 0}
+    ActiveGameObject: {fileID: 0}
+  - list:
+    - {fileID: 652943198}
+    ActiveGameObject: {fileID: 652943198}
+  - list:
+    - {fileID: 0}
+    ActiveGameObject: {fileID: 0}
   - list:
     - {fileID: 905318121}
     ActiveGameObject: {fileID: 905318121}
@@ -60696,28 +60857,6 @@ MonoBehaviour:
     - {fileID: 1556965059}
     - {fileID: 1577179521}
     ActiveGameObject: {fileID: 1022876773}
-  - list:
-    - {fileID: 248094906}
-    - {fileID: 474395896}
-    - {fileID: 1542973653}
-    - {fileID: 1556965059}
-    - {fileID: 1577179521}
-    ActiveGameObject: {fileID: 1542973653}
-  - list:
-    - {fileID: 248094906}
-    - {fileID: 474395896}
-    - {fileID: 1556965059}
-    - {fileID: 1577179521}
-    ActiveGameObject: {fileID: 248094906}
-  - list:
-    - {fileID: 474395896}
-    - {fileID: 1556965059}
-    - {fileID: 1577179521}
-    ActiveGameObject: {fileID: 1556965059}
-  - list:
-    - {fileID: 474395896}
-    - {fileID: 1577179521}
-    ActiveGameObject: {fileID: 1577179521}
   Hash4: []
   Hash5: []
   Hash6: []
