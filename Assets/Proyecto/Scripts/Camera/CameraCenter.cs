@@ -3,25 +3,16 @@ using System.Collections;
 
 public class CameraCenter : MonoBehaviour {
     public float weight = 1, radius = 0;
-    private Transform[] players;
-    private Vector3 Center {
-        get {
-            Vector3 center = new Vector3();
-            for(int i = 0; i < players.Length; i++ ) {
-                center += players[i].position;
-            }
-            center *= inversePlayers;
-            return center;
-        }
-    }
+    private PlayerLookAt[] players;
+    
     private float inversePlayers;
 
     public void InitCenter (int playerCount) {
-        players = new Transform[playerCount];
+        players = new PlayerLookAt[playerCount];
         inversePlayers = 1 / (float) playerCount;
     }
 
-    public void AddPlayer (int i, Transform t) {
+    public void AddPlayer (int i, PlayerLookAt t) {
         players[i] = t;
     }
 
@@ -30,7 +21,7 @@ public class CameraCenter : MonoBehaviour {
         group.m_Targets = new Cinemachine.CinemachineTargetGroup.Target[players.Length];
         for(int i = 0; i < group.m_Targets.Length; i++ ) {
             group.m_Targets[i] = new Cinemachine.CinemachineTargetGroup.Target {
-                target = players[i],
+                target = players[i].lookAt,
                 radius = radius,
                 weight = weight
             };
