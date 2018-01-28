@@ -14,6 +14,7 @@ public class PlayerInput : MonoBehaviour {
     [Range(.01f, 1f)]
     public float maxButtonTime = 0.5f;
     private float vibrationIntensity;
+    public AudioSource shout;
 
     private void Awake () {
         movement = GetComponent<PlayerMovement>();
@@ -21,6 +22,7 @@ public class PlayerInput : MonoBehaviour {
 
     private void Start () {
         state = GamePad.GetState( playerIndex );
+        shout = GetComponent<AudioSource>();
     }
 
     private void Update () {
@@ -41,6 +43,11 @@ public class PlayerInput : MonoBehaviour {
                 vibrationIntensity = Mathf.InverseLerp( maxButtonTime, 0f, tapTime );
                 tapTime = 0f;
                 movement.Shouting( vibrationIntensity );
+            }
+            if (shout.isPlaying) {
+                //Do nothing
+            } else {
+                shout.Play();
             }
         }
         else {

@@ -144,6 +144,7 @@ MonoBehaviour:
   sanity: 9.5
   conversion: 9.5
   conversionRate: 1.24
+  attackinMixer: {fileID: 24100000, guid: bd338826c4204dc4e9c466d4548035d7, type: 2}
 --- !u!136 &136553319089993250
 CapsuleCollider:
   m_ObjectHideFlags: 1
