@@ -112,8 +112,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bdc3a55b0622fa499b2308e7f997ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
   runningSpeed: 2
   walkingSpeed: 1
+  shoutRadius: 2.17
+  team: 0
+  layerMask: 0
 --- !u!114 &114757794434717738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,6 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
+  vibrationMultiplier: 1
+  maxButtonTime: 0.5
 --- !u!136 &136138498627714964
 CapsuleCollider:
   m_ObjectHideFlags: 1

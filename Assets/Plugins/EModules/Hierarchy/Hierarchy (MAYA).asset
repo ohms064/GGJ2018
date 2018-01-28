@@ -14,6 +14,8 @@ MonoBehaviour:
   last_scenesV2:
   - guid: fbe28635be7a8014f8cb0be77f33b58a
     pin: 0
+  - guid: d53d42bddc2e12445938bf3a36967e5b
+    pin: 0
   - guid: ebabcc8064153d14c86bfd26ca8090bb
     pin: 0
   - guid: cccde4c5ffb739943ba6857307a20901

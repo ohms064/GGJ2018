@@ -15,9 +15,12 @@ MonoBehaviour:
   - prefab: {fileID: 114757794434717738, guid: 2705a204a958b114aa9f1c9003cef695, type: 2}
     startPosition: {x: 4, y: 1, z: 15}
     index: 0
+    team: 0
   - prefab: {fileID: 114757794434717738, guid: 2705a204a958b114aa9f1c9003cef695, type: 2}
     startPosition: {x: 15, y: 1, z: -15}
     index: 1
+    team: 1
   - prefab: {fileID: 114757794434717738, guid: 2705a204a958b114aa9f1c9003cef695, type: 2}
     startPosition: {x: -15, y: 1, z: -15}
     index: 2
+    team: 2

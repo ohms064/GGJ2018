@@ -11,4 +11,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d225e60b5012341b1a483073de3f75, type: 3}
   m_Name: 5Player
   m_EditorClassIdentifier: 
-  players: []
+  players:
+  - prefab: {fileID: 0}
+    startPosition: {x: 0, y: 0, z: 0}
+    index: 0
+    team: 4
+  - prefab: {fileID: 0}
+    startPosition: {x: 0, y: 0, z: 0}
+    index: 0
+    team: 4
+  - prefab: {fileID: 0}
+    startPosition: {x: 0, y: 0, z: 0}
+    index: 0
+    team: 4
+  - prefab: {fileID: 0}
+    startPosition: {x: 0, y: 0, z: 0}
+    index: 0
+    team: 4
+  - prefab: {fileID: 0}
+    startPosition: {x: 0, y: 0, z: 0}
+    index: 0
+    team: 4

@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114982307970777108}
   - component: {fileID: 195476972197370692}
   - component: {fileID: 54975492735841328}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,8 +138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ac6c516584c1cc41803466575e69089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanity: 1
-  conversion: 1
+  sanity: 9.5
+  conversion: 9.5
+  conversionRate: 1.24
 --- !u!136 &136553319089993250
 CapsuleCollider:
   m_ObjectHideFlags: 1
