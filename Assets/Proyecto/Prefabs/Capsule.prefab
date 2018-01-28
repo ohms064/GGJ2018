@@ -25,9 +25,9 @@ GameObject:
   - component: {fileID: 54789872464150794}
   - component: {fileID: 114757794434717738}
   - component: {fileID: 114474538587682798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,8 +112,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bdc3a55b0622fa499b2308e7f997ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
   runningSpeed: 2
   walkingSpeed: 1
+  shoutRadius: 1
+  team: 0
+  layerMask: 0
 --- !u!114 &114757794434717738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,6 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
+  vibrationMultiplier: 1
+  maxButtonTime: 0.5
 --- !u!136 &136138498627714964
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -23,10 +23,11 @@ GameObject:
   - component: {fileID: 136553319089993250}
   - component: {fileID: 23804658733640480}
   - component: {fileID: 114074861300536248}
-  - component: {fileID: 114887168160146044}
-  - component: {fileID: 114982307970777108}
+  - component: {fileID: 114853942494680602}
+  - component: {fileID: 114116927052178940}
   - component: {fileID: 195476972197370692}
   - component: {fileID: 54975492735841328}
+  - component: {fileID: 114258350657857084}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -41,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1535675994812116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.76, y: 0.98994994, z: -2.57}
+  m_LocalPosition: {x: -4.66, y: 0.98994994, z: -5.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,7 +116,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeRange: {x: 4.810127, y: 12.658228}
---- !u!114 &114887168160146044
+--- !u!114 &114116927052178940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1535675994812116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04dfd0849fc364b40ab30df9da3dd738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &114258350657857084
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -126,8 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c4572fd1a956249ae6cda356c5436e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
---- !u!114 &114982307970777108
+  speed: 0
+--- !u!114 &114853942494680602
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -140,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sanity: 1
   conversion: 1
+  conversionRate: 0.1
 --- !u!136 &136553319089993250
 CapsuleCollider:
   m_ObjectHideFlags: 1
