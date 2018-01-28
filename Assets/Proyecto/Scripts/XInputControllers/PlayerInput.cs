@@ -15,6 +15,7 @@ public class PlayerInput : MonoBehaviour {
     public float maxButtonTime = 0.5f;
     private float vibrationIntensity;
     public AudioSource shout;
+    public AudioSource inhale;
 
     private void Awake () {
         movement = GetComponent<PlayerMovement>();
@@ -22,7 +23,7 @@ public class PlayerInput : MonoBehaviour {
 
     private void Start () {
         state = GamePad.GetState( playerIndex );
-        shout = GetComponent<AudioSource>();
+        
     }
 
     private void Update () {
@@ -44,10 +45,11 @@ public class PlayerInput : MonoBehaviour {
                 tapTime = 0f;
                 movement.Shouting( vibrationIntensity );
             }
-            if (shout.isPlaying) {
+            if (shout.isPlaying || inhale.isPlaying) {
                 //Do nothing
             } else {
-                shout.Play();
+                inhale.Play();
+                shout.PlayDelayed(0.341f);
             }
         }
         else {

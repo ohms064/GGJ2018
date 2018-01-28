@@ -8925,7 +8925,7 @@ MonoBehaviour:
   m_MaximumDistance: 150
   m_MinimumFOV: 3
   m_MaximumFOV: 60
-  m_MinimumOrthoSize: 1
+  m_MinimumOrthoSize: 8
   m_MaximumOrthoSize: 100
 --- !u!1 &262197211
 GameObject:
@@ -18445,7 +18445,7 @@ Camera:
   far clip plane: 5000
   field of view: 3
   orthographic: 1
-  orthographic size: 1
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -60779,6 +60779,9 @@ MonoBehaviour:
   Hash2: []
   Hash3:
   - list:
+    - {fileID: 618312204}
+    ActiveGameObject: {fileID: 618312204}
+  - list:
     - {fileID: 0}
     ActiveGameObject: {fileID: 0}
   - list:
@@ -60871,9 +60874,6 @@ MonoBehaviour:
   - list:
     - {fileID: 1942045480}
     ActiveGameObject: {fileID: 1942045480}
-  - list:
-    - {fileID: 618312204}
-    ActiveGameObject: {fileID: 618312204}
   - list:
     - {fileID: 1755626729}
     ActiveGameObject: {fileID: 1755626729}
