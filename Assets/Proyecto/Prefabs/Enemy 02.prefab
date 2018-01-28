@@ -1177,7 +1177,6 @@ MonoBehaviour:
   conversion: 4
   conversionRate: 1
   sanityRate: 1
-  attackinMixer: {fileID: 24100000, guid: bd338826c4204dc4e9c466d4548035d7, type: 2}
   explodeTime: 3
 --- !u!114 &114350417602326588
 MonoBehaviour:

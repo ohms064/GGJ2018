@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4963,9 +4963,19 @@ Prefab:
       propertyPath: scores.Array.data[3]
       value: 
       objectReference: {fileID: 1682565360}
+    - target: {fileID: 114800813367367076, guid: 6bdf9ccae3468ba4f98f069947367daf,
+        type: 2}
+      propertyPath: useTest
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6bdf9ccae3468ba4f98f069947367daf, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &124799184 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1351868907734384, guid: 6bdf9ccae3468ba4f98f069947367daf,
+    type: 2}
+  m_PrefabInternal: {fileID: 124799183}
 --- !u!1 &142761226
 GameObject:
   m_ObjectHideFlags: 0
@@ -60688,14 +60698,17 @@ MonoBehaviour:
   Hash2: []
   Hash3:
   - list:
-    - {fileID: 0}
-    ActiveGameObject: {fileID: 0}
-  - list:
-    - {fileID: 0}
-    ActiveGameObject: {fileID: 0}
+    - {fileID: 124799184}
+    ActiveGameObject: {fileID: 124799184}
   - list:
     - {fileID: 840718334}
     ActiveGameObject: {fileID: 840718334}
+  - list:
+    - {fileID: 0}
+    ActiveGameObject: {fileID: 0}
+  - list:
+    - {fileID: 0}
+    ActiveGameObject: {fileID: 0}
   - list:
     - {fileID: 0}
     - {fileID: 0}
@@ -60762,9 +60775,6 @@ MonoBehaviour:
     - {fileID: 2010168183}
     - {fileID: 2071554537}
     ActiveGameObject: {fileID: 1143182357}
-  - list:
-    - {fileID: 1685996319}
-    ActiveGameObject: {fileID: 1685996319}
   Hash4: []
   Hash5: []
   Hash6: []
@@ -77914,6 +77924,12 @@ Prefab:
       propertyPath: randomSpawnTime.x
       value: 4.858873
       objectReference: {fileID: 0}
+    - target: {fileID: 114047549685994194, guid: c394548b94066434eb4be082d2e8d49e,
+        type: 2}
+      propertyPath: attackinMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: bd338826c4204dc4e9c466d4548035d7,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c394548b94066434eb4be082d2e8d49e, type: 2}
   m_IsPrefabParent: 0

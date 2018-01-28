@@ -5,10 +5,11 @@ using Sirenix.OdinInspector;
 using UnityEngine.UI;
 
 public class GlobalGameManager : MonoBehaviour {
+    public CameraCenter camCenter;
 #if UNITY_EDITOR
     public bool useTest;
     public GameMode test;
-    public CameraCenter camCenter;
+    
 #endif
     private GameMode Current {
         get {
