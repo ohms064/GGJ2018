@@ -16,7 +16,7 @@ public class NPCMovement : Movement {
     }
 
     private void Start() {
-        direction = Vector3.forward;
+        direction = GetComponent<Transform>().forward;
         InvokeRepeating("CheckSurroundings", 0.1f, 1.0f);
     }
 
