@@ -71,6 +71,7 @@ public abstract class PoolObject : MonoBehaviour {
 
     public virtual void Spawn (Vector3 position) {
         gameObject.SetActive( true );
+        transform.position = position;
     }
 
     public virtual void Despawn () {

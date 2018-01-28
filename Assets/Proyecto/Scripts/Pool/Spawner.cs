@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour {
         NPCPoolObject poolObject;
         for ( int i = 0; i < spawnPositions.Length; i++ ) {
             if ( pool.RequestPoolObject( out poolObject ) ) {
-                poolObject.Spawn( spawnPositions[i].Position );
+                spawnPositions[i].Spawn( poolObject );
             }
         }
 
