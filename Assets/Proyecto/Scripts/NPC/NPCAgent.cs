@@ -12,14 +12,14 @@ public class NPCAgent : MonoBehaviour {
         }
     }
 
-    private Movement movement;
+    //private Movement movement;
 
     private void Awake() {
-        movement = GetComponent<Movement>();
+        //movement = GetComponent<Movement>();
     }
 
     private void FixedUpdate() {
-        movement.Move(Vector3.forward);
+        //movement.Move(Vector3.forward);
     }
 
 
