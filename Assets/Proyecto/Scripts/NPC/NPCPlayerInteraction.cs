@@ -12,10 +12,9 @@ public class NPCPlayerInteraction : MonoBehaviour {
     private bool converting;
     private NPCMovement movement;
     [Range(0.1f, 2f)]
-    public float conversionRate;
+    public float conversionRate, sanityRate;
     public AudioMixer attackinMixer;
     
-
     private void Awake () {
         movement = GetComponent<NPCMovement>();
         
@@ -51,6 +50,7 @@ public class NPCPlayerInteraction : MonoBehaviour {
         if ( !converting || team != convertingPlayer ) {
             return;
         }
+
         currentConversion += delta * conversionRate;
         Debug.LogFormat( "Converting: {2} {0} {1}", delta, convertingPlayer, currentConversion );
         if(currentConversion >= conversion ) {
@@ -66,10 +66,19 @@ public class NPCPlayerInteraction : MonoBehaviour {
         currentConversion = 0f;
         EndConversion();
         movement.Shout();
+        currentSanity += sanityRate;
+        if(currentSanity > sanity ) {
+
+        }
     }
 
     public void EndConversion () {
         converting = false;
         convertingPlayer = PlayerTeam.NONE;
     }
+
+    private void Explode () {
+        GetComponent<NPCPoolObject>().Despawn();
+    }
+
 }

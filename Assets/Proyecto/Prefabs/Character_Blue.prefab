@@ -1110,7 +1110,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1191,7 +1191,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1340,7 +1340,7 @@ MonoBehaviour:
   shoutRadius: 2.17
   team: 0
   layerMask: 0
-  scorePerShout: 100
+  convertPoints: 200
   accelerationTime: 1
 --- !u!114 &114855897814976336
 MonoBehaviour:

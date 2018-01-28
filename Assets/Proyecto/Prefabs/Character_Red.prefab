@@ -1295,7 +1295,7 @@ MonoBehaviour:
   shoutRadius: 2.17
   team: 0
   layerMask: 0
-  scorePerShout: 100
+  convertPoints: 200
   accelerationTime: 1
 --- !u!114 &114373317094218172
 MonoBehaviour:
