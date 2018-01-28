@@ -13,15 +13,16 @@ public class NPCPlayerInteraction : MonoBehaviour {
     private NPCMovement movement;
     [Range(0.1f, 2f)]
     public float conversionRate, sanityRate;
-    public AudioMixer attackinMixer;
+    //public AudioMixer attackinMixer;
+    //public GlobalGameManager ggm;
     
     private void Awake () {
         movement = GetComponent<NPCMovement>();
-        
+        //ggm =  GetComponent<GlobalGameManager>();
     }
 
     public void Update() {
-        Debug.Log("con" + converting);
+        /*Debug.Log("con" + converting);
         if (converting) {
             float vol;
             bool x = attackinMixer.GetFloat("attacking", out vol);
@@ -32,7 +33,7 @@ public class NPCPlayerInteraction : MonoBehaviour {
             bool x = attackinMixer.GetFloat("attacking", out vol);
             if(vol > -40.0f)
                 attackinMixer.SetFloat("attacking", vol - (Time.deltaTime * 10));
-        }
+        }*/
     }
 
     public void StartConversion (PlayerTeam team) {
@@ -81,4 +82,7 @@ public class NPCPlayerInteraction : MonoBehaviour {
         GetComponent<NPCPoolObject>().Despawn();
     }
 
+    public bool IsConverting() {
+        return converting;
+    }
 }
