@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(Movement))]
 public class NPCPlayerInteraction : MonoBehaviour {
@@ -12,9 +13,27 @@ public class NPCPlayerInteraction : MonoBehaviour {
     private NPCMovement movement;
     [Range(0.1f, 2f)]
     public float conversionRate;
+    public AudioMixer attackinMixer;
+    
 
     private void Awake () {
-        movement = GetComponent<NPCMovement>();    
+        movement = GetComponent<NPCMovement>();
+        
+    }
+
+    public void Update() {
+        Debug.Log("con" + converting);
+        if (converting) {
+            float vol;
+            bool x = attackinMixer.GetFloat("attacking", out vol);
+            if(vol < 0.0f)
+                attackinMixer.SetFloat("attacking", vol + (Time.deltaTime*10));
+        } else {
+            float vol;
+            bool x = attackinMixer.GetFloat("attacking", out vol);
+            if(vol > -40.0f)
+                attackinMixer.SetFloat("attacking", vol - (Time.deltaTime * 10));
+        }
     }
 
     public void StartConversion (PlayerTeam team) {
