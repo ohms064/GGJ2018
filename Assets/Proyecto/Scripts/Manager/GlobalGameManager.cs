@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
+using UnityEngine.UI;
 
 public class GlobalGameManager : MonoBehaviour {
 #if UNITY_EDITOR
     public bool useTest;
     public GameMode test;
 #endif
-    private float[] scores;
     private GameMode Current {
         get {
 #if UNITY_EDITOR
@@ -18,16 +19,32 @@ public class GlobalGameManager : MonoBehaviour {
             return GameMode.currentMode;
         }
     }
+    [SceneObjectsOnly]
+    public Scores[] scores = new Scores[4];
 
 	// Use this for initialization
 	private void Awake () {
-        scores = new float[Current.PlayerCount];
+        switch ( Current.teamsCount ) {
+            case XInputDotNetPure.PlayerIndex.Two:
+            case XInputDotNetPure.PlayerIndex.One:
+                scores[2].gameObject.SetActive( false );
+                scores[3].gameObject.SetActive( false );
+                break;
+            case XInputDotNetPure.PlayerIndex.Three:
+                scores[3].gameObject.SetActive( false );
+                break;
+        }
         for ( int i = 0; i < Current.PlayerCount; i++ ) {
             var currentPlayer = Current.players[i];
             var inputManager = Instantiate( currentPlayer.prefab, currentPlayer.startPosition, Quaternion.identity );
             inputManager.playerIndex = currentPlayer.index;
-            inputManager.GetComponent<PlayerMovement>().team = currentPlayer.team;
+            var movement = inputManager.GetComponent<PlayerMovement>();
+            movement.team = currentPlayer.team;
+            movement.AddToScore += CreateScoreListener( scores[i] );
         }
+    }
 
-	}
+    public System.Action<int> CreateScoreListener (Scores score) {
+        return score.AddScore;
+    }
 }

@@ -43,6 +43,7 @@ public class NPCPlayerInteraction : MonoBehaviour {
         currentPlayer = team;
         currentConversion = 0f;
         EndConversion();
+        movement.Shout();
     }
 
     public void EndConversion () {
