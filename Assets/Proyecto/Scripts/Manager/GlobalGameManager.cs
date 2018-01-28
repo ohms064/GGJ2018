@@ -8,6 +8,7 @@ public class GlobalGameManager : MonoBehaviour {
 #if UNITY_EDITOR
     public bool useTest;
     public GameMode test;
+    public CameraCenter camCenter;
 #endif
     private GameMode Current {
         get {
@@ -34,9 +35,12 @@ public class GlobalGameManager : MonoBehaviour {
                 scores[3].gameObject.SetActive( false );
                 break;
         }
+
+        camCenter.InitCenter( Current.PlayerCount );
         for ( int i = 0; i < Current.PlayerCount; i++ ) {
             var currentPlayer = Current.players[i];
             var inputManager = Instantiate( currentPlayer.prefab, currentPlayer.startPosition, Quaternion.identity );
+            camCenter.AddPlayer( i, inputManager.transform );
             inputManager.playerIndex = currentPlayer.index;
             var movement = inputManager.GetComponent<PlayerMovement>();
             movement.team = currentPlayer.team;

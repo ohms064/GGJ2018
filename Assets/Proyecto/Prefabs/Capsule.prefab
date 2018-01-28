@@ -113,8 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  runningSpeed: 2
-  walkingSpeed: 1
+  runningSpeed: 8
+  walkingSpeed: 5
   shoutRadius: 2.17
   team: 0
   layerMask: 0
