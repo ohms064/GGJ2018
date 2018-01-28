@@ -1157,10 +1157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ac6c516584c1cc41803466575e69089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanity: 9.5
-  conversion: 9.5
-  conversionRate: 1.24
-  sanityRate: 0.1
+  sanity: 10
+  conversion: 4
+  conversionRate: 1
+  sanityRate: 1
   attackinMixer: {fileID: 24100000, guid: bd338826c4204dc4e9c466d4548035d7, type: 2}
   explodeTime: 3
 --- !u!114 &114216346463366206
@@ -1238,7 +1238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04dfd0849fc364b40ab30df9da3dd738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 5
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
