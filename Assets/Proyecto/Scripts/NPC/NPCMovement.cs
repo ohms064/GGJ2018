@@ -22,6 +22,7 @@ public class NPCMovement : Movement {
     }
 
     private void Start() {
+        transform.Rotate(Vector3.up, Random.Range(0,360), Space.Self);
         direction = GetComponent<Transform>().forward;
         InvokeRepeating("CheckSurroundings", 0.1f, 1.0f);
     }
